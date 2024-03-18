@@ -4,7 +4,7 @@ const loginBtn = document.querySelector(".login-btn");
 const loginModal = new bootstrap.Modal("#login-modal", {backdrop:'static'});
 
 function navbarFixed(){
-    if (window.scrollY > window.innerHeight*0.2) {
+    if (window.scrollY > window.innerHeight*0.3) {
         navBar.classList.add("fixed-top");
         navPlaceholder.setAttribute("style", "height: 56.8px");
     } else {
