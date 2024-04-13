@@ -22,3 +22,9 @@
     top: 0px;
     left: 0px;
 }
+.profile-img{
+    width: 200px;
+}
+.profile-intro{
+    font-size: 24px;
+}
