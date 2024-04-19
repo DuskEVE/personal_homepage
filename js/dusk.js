@@ -1,7 +1,5 @@
 const navBar = document.querySelector(".navbar");
 const navPlaceholder = document.querySelector(".nav-placeholder");
-const loginBtn = document.querySelector(".login-btn");
-const loginModal = new bootstrap.Modal("#login-modal", {backdrop:'static'});
 
 function navbarFixed(){
     if (window.scrollY > window.innerHeight*0.3) {
@@ -13,9 +11,4 @@ function navbarFixed(){
     }
 }
 
-function login(){
-    loginModal.show();
-}
-
 addEventListener('scroll', navbarFixed);
-loginBtn.addEventListener('click', login)

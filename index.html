@@ -3,55 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dusk</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/dusk.css">
 </head>
-<body class="dusk-bg-gray">
-
-  <div class="modal fade" id="login-modal" tabindex="-1" aria-labelledby="login-modal-label" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="login-modal-label">Modal title</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          login function work in prograss
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </div>
+<body class="bg-light" id="page-top">
 
   <div class="top">
       <div class="top-img"></div>
   </div>
 
   <div class="nav-placeholder"></div>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark border-bottom border-body" data-bs-theme="dark">
+  <nav class="navbar navbar-expand-lg bg-primary border-bottom border-body" data-bs-theme="dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Dusk</a>
+        <a class="navbar-brand" href="#page-top">Dusk</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <!-- <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li> -->
-            <li class="nav-item dropdown">
+            <li class="nav-item me-3">
+              <a class="nav-link active" aria-current="page" href="#intro">簡介</a>
+            </li>
+            <li class="nav-item me-3">
+              <a class="nav-link active" aria-current="page" href="#skill">專長</a>
+            </li>
+            <li class="nav-item me-3">
+              <a class="nav-link active" aria-current="page" href="#side-project">作品集</a>
+            </li>
+            <!-- <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 個人作品集
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="./calendar/">作品一-Calendar(萬年曆)</a></li>
+                <li><a class="dropdown-item" href="./calendar/">Calendar(萬年曆)</a></li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="./p01/">作品二-個人遊戲資訊分享站</a></li>
+                <li><a class="dropdown-item" href="./p01/">個人遊戲資訊分享站</a></li>
               </ul>
             </li>
             <li class="nav-item dropdown">
@@ -60,55 +48,41 @@
               </a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="https://wda.mackliu.com/s1120415/web_b01/">
-                  第一題-卓越科技大學校園資訊系統
+                  卓越科技大學校園資訊系統
                 </a></li>
                 <li><a class="dropdown-item" href="https://wda.mackliu.com/s1120415/web_b02/">
-                  第二題-健康促進網社群平台
+                  健康促進網社群平台
                 </a></li>
                 <li><a class="dropdown-item" href="https://wda.mackliu.com/s1120415/web_b03/">
-                  第三題-ABC影城
+                  ABC影城
                 </a></li>
                 <li><a class="dropdown-item" href="https://wda.mackliu.com/s1120415/web_b04/">
-                  第四題-精品電子商務
+                  精品電子商務
                 </a></li>
               </ul>
-            </li>
-            <!-- <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li> -->
-            <!-- <li class="nav-item">
-              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
             </li> -->
           </ul>
-          <!-- <form class="d-flex" role="search"> -->
-            <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
-            <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
-          <!-- </form> -->
-          <div class="d-flex">
-            <button class="btn btn-outline-success login-btn">login</button>
-          </div>
+
         </div>
       </div>
   </nav>
 
   <div class="container">
-    <div class="text-light p-5">
-      <!-- 頭像 -->
-      <!-- 簡介 -->
-      <div class="row dusk-bg-lightgray m-3 p-3">
+    <div class="p-5">
+
+      <div class="row bg-secondary-subtle m-3 p-3" id="intro">
         <div class="col-3 d-flex justify-content-center align-items-center">
           <img src="./img/229GKNQ.jpg" class="profile-img">
         </div>
         
-        <div class="col-9 profile-intro ">
+        <div class="col-9 profile-intro">
           <p>Hello world! 我是吳兆軒</p>
           <p>熟悉Javascript和PHP等語言，對於程式設計充滿熱忱</p>
           <p>我的<a href="https://github.com/DuskEVE" style="text-decoration: none;">Github</a></p>
         </div>
       </div>
 
-      <!-- 專長 -->
-      <div class="row dusk-bg-lightgray m-3 p-3">
+      <div class="row bg-secondary-subtle m-3 p-3" id="skill">
         <h3 class="text-center">-專長-</h3>
 
         <div class="p-3 col-6 text-center">
@@ -128,15 +102,102 @@
         </div>
       </div>
 
-      
+      <div class="row bg-secondary-subtle m-3 p-3" id="side-project">
+        <h3 class="text-center">-作品集-</h3>
+
+        <div class="col-4">
+          <div class="card m-auto" style="width: 18rem;">
+            <img src="./img/s-01.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title text-center">萬年曆</h5>
+              <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+              <div class="text-center">
+                <a href="https://wda.mackliu.com/s1120415/calendar/" class="btn btn-primary">瀏覽</a>
+                <a href="https://github.com/DuskEVE/PHP-Calendar" class="btn btn-success">原始碼</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-4 mb-3">
+          <div class="card m-auto" style="width: 18rem;">
+            <img src="./img/s-02.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title text-center">個人遊戲資訊分享網站</h5>
+              <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+              <div class="text-center">
+                <a href="https://wda.mackliu.com/s1120415/p01/" class="btn btn-primary">瀏覽</a>
+                <a href="https://github.com/DuskEVE/side_project_01" class="btn btn-success">原始碼</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-4 mb-3">
+          <div class="card m-auto" style="width: 18rem;">
+            <img src="./img/b-01.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title text-center">網頁乙級-卓越科技大學校園資訊系統</h5>
+              <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+              <div class="text-center">
+                <a href="https://wda.mackliu.com/s1120415/web_b01/" class="btn btn-primary">瀏覽</a>
+                <a href="#" class="btn btn-success">原始碼</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-4 mb-3">
+          <div class="card m-auto" style="width: 18rem;">
+            <img src="./img/b-02.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title text-center">網頁乙級-健康促進網社群平台</h5>
+              <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+              <div class="text-center">
+                <a href="https://wda.mackliu.com/s1120415/web_b02/" class="btn btn-primary">瀏覽</a>
+                <a href="#" class="btn btn-success">原始碼</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-4">
+          <div class="card m-auto" style="width: 18rem;">
+            <img src="./img/b-03.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title text-center">網頁乙級-ABC影城</h5>
+              <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+              <div class="text-center">
+                <a href="https://wda.mackliu.com/s1120415/web_b03/" class="btn btn-primary">瀏覽</a>
+                <a href="#" class="btn btn-success">原始碼</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-4">
+          <div class="card m-auto" style="width: 18rem;">
+            <img src="./img/b-04.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title text-center">網頁乙級-精品電子商務</h5>
+              <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+              <div class="text-center">
+                <a href="https://wda.mackliu.com/s1120415/web_b04/" class="btn btn-primary">瀏覽</a>
+                <a href="#" class="btn btn-success">原始碼</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
   </div>
 
-  <!-- <div class="footer bg-dark text-light d-flex justify-content-center align-items-center">
+  <div class="footer bg-dark text-light d-flex justify-content-center align-items-center">
       <span class="m-auto">
-
+        © 2024 Dusk
       </span>
-  </div> -->
+  </div>
   
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   <script src="./js/dusk.js"></script>
