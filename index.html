@@ -24,43 +24,14 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item me-3">
-              <a class="nav-link active" aria-current="page" href="#intro">簡介</a>
+            <li v-for="link in links" class="nav-item me-3">
+              <a class="nav-link active" aria-current="page" v-bind:href=link.href>{{link.name}}</a>
             </li>
-            <li class="nav-item me-3">
+            <!-- <li class="nav-item me-3">
               <a class="nav-link active" aria-current="page" href="#skill">專長</a>
             </li>
             <li class="nav-item me-3">
               <a class="nav-link active" aria-current="page" href="#side-project">作品集</a>
-            </li>
-            <!-- <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                個人作品集
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="./calendar/">Calendar(萬年曆)</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="./p01/">個人遊戲資訊分享站</a></li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                網頁設計乙級題目練習成果
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="https://wda.mackliu.com/s1120415/web_b01/">
-                  卓越科技大學校園資訊系統
-                </a></li>
-                <li><a class="dropdown-item" href="https://wda.mackliu.com/s1120415/web_b02/">
-                  健康促進網社群平台
-                </a></li>
-                <li><a class="dropdown-item" href="https://wda.mackliu.com/s1120415/web_b03/">
-                  ABC影城
-                </a></li>
-                <li><a class="dropdown-item" href="https://wda.mackliu.com/s1120415/web_b04/">
-                  精品電子商務
-                </a></li>
-              </ul>
             </li> -->
           </ul>
 
@@ -108,101 +79,17 @@
 
         <div v-for="data in datas" class="col col-md-4 mb-3">
           <div class="card m-auto" style="width: 18rem;">
-            <img v-bind:src="data.img" class="card-img-top" alt="...">
+            <img v-bind:src=data.img class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title text-center">{{data.name}}</h5>
 
               <div class="text-center">
-                <a v-bind:href="data.url" class="btn btn-primary">瀏覽</a>
-                <a v-bind:href="data.source" class="btn btn-success">原始碼</a>
+                <a v-bind:href=data.url class="btn btn-primary">瀏覽</a>
+                <a v-bind:href=data.source class="btn btn-success">原始碼</a>
               </div>
             </div>
           </div>
         </div>
-
-        <!-- <div class="col col-md-4 mb-3">
-          <div class="card m-auto" style="width: 18rem;">
-            <img src="./img/s-01.png" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title text-center">萬年曆</h5>
-
-              <div class="text-center">
-                <a href="https://wda.mackliu.com/s1120415/calendar/" class="btn btn-primary">瀏覽</a>
-                <a href="https://github.com/DuskEVE/PHP-Calendar" class="btn btn-success">原始碼</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col col-md-4 mb-3">
-          <div class="card m-auto" style="width: 18rem;">
-            <img src="./img/s-02.png" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title text-center">個人遊戲資訊分享網站</h5>
-              
-              <div class="text-center">
-                <a href="https://wda.mackliu.com/s1120415/p01/" class="btn btn-primary">瀏覽</a>
-                <a href="https://github.com/DuskEVE/side_project_01" class="btn btn-success">原始碼</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col col-md-4 mb-3">
-          <div class="card m-auto" style="width: 18rem;">
-            <img src="./img/b-01.png" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title text-center">網頁乙級-卓越科技大學校園資訊系統</h5>
-              
-              <div class="text-center">
-                <a href="https://wda.mackliu.com/s1120415/web_b01/" class="btn btn-primary">瀏覽</a>
-                <a href="https://github.com/DuskEVE/PHP-B-Q1" class="btn btn-success">原始碼</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col col-md-4 mb-3">
-          <div class="card m-auto" style="width: 18rem;">
-            <img src="./img/b-02.png" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title text-center">網頁乙級-健康促進網社群平台</h5>
-
-              <div class="text-center">
-                <a href="https://wda.mackliu.com/s1120415/web_b02/" class="btn btn-primary">瀏覽</a>
-                <a href="https://github.com/DuskEVE/PHP-B-Q2" class="btn btn-success">原始碼</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col col-md-4 mb-3">
-          <div class="card m-auto" style="width: 18rem;">
-            <img src="./img/b-03.png" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title text-center">網頁乙級-ABC影城</h5>
-
-              <div class="text-center">
-                <a href="https://wda.mackliu.com/s1120415/web_b03/" class="btn btn-primary">瀏覽</a>
-                <a href="https://github.com/DuskEVE/PHP-B-Q3" class="btn btn-success">原始碼</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col col-md-4">
-          <div class="card m-auto" style="width: 18rem;">
-            <img src="./img/b-04.png" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title text-center">網頁乙級-精品電子商務</h5>
-
-              <div class="text-center">
-                <a href="https://wda.mackliu.com/s1120415/web_b04/" class="btn btn-primary">瀏覽</a>
-                <a href="https://github.com/DuskEVE/PHP-B-Q4" class="btn btn-success">原始碼</a>
-              </div>
-            </div>
-          </div>
-        </div> -->
 
       </div>
     </div>
@@ -218,6 +105,11 @@
     Vue.createApp({
       data() {
         return {
+          links: [
+            {name:'簡介', href:'#intro'},
+            {name:'專長', href:'#skill'},
+            {name:'作品集', href:'#side-project'}
+          ],
           datas: [
             {name:'萬年曆', img:'./img/s-01.png', url:'https://wda.mackliu.com/s1120415/calendar/', source:'https://github.com/DuskEVE/PHP-Calendar'},
             {name:'個人遊戲資訊分享網站', img:'./img/s-02.png', url:'https://wda.mackliu.com/s1120415/p01/', source:'https://github.com/DuskEVE/side_project_01'},
@@ -228,7 +120,7 @@
           ]
         }
       }
-    }).mount('#side-project');
+    }).mount('body');
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   <script src="./js/dusk.js"></script>
