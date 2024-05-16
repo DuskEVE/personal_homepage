@@ -22,29 +22,9 @@
     </div>
 
     <div class="nav-placeholder"></div>
-    <nav class="navbar navbar-expand-lg border-bottom border-body"
-      v-bind:class="theme.nav, {'fixed-top':navFixed}" data-bs-theme="dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#page-top">Dusk</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li v-for="(link, index) in links" class="nav-item me-3" v-bind:key="index">
-              <a class="nav-link" v-bind:class="{active: navIndex==index}" aria-current="page" v-bind:href=link.href
-                @click="navIndex=index">{{link.name}}</a>
-            </li>
-          </ul>
-          <button class="btn" v-bind:class="theme.themeBtn"
-            @click="changeTheme()">
-            <span v-if="isDarkMode==false">dark mode</span>
-            <span v-else>light mode</span>
-          </button>
-        </div>
-      </div>
-    </nav>
+
+    <nav-bar :links="links" :nav-index="navIndex" :nav-fixed="navFixed" :is-dark-mode="isDarkMode" 
+    :theme="theme" :change-theme="changeTheme" :nav-click="(index) => navIndex=index"></nav-bar>
 
     <div class="container">
       <div class="p-5">
@@ -85,19 +65,6 @@
           <h3 class="text-center">-作品集-</h3>
 
           <side-project v-for="data in datas" v-bind:data="data"></side-project>
-          <!-- <div v-for="data in datas" class="col col-md-4 mb-3">
-            <div class="card m-auto" style="width: 18rem;">
-              <img v-bind:src=data.img class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title text-center">{{data.name}}</h5>
-
-                <div class="text-center">
-                  <a v-bind:href=data.url class="btn btn-primary">瀏覽</a>
-                  <a v-bind:href=data.source class="btn btn-success">原始碼</a>
-                </div>
-              </div>
-            </div>
-          </div> -->
 
         </div>
       </div>
@@ -118,10 +85,10 @@
           navFixed: false,
           isDarkMode: false,
           theme: {
-            bg:'bg-light',
-            nav:'bg-primary',
-            content:'bg-secondary-subtle',
-            themeBtn:'btn-dark'
+            bg: 'bg-light',
+            nav: 'bg-primary',
+            content: 'bg-secondary-subtle',
+            themeBtn: 'btn-dark'
           },
           links: [
             { name: '簡介', href: '#intro' },
@@ -139,30 +106,30 @@
         }
       },
       methods: {
-        changeTheme(){
-          if(this.isDarkMode){
-            this.theme.bg ='bg-light';
-            this.theme.nav ='bg-primary';
-            this.theme.content ='bg-secondary-subtle';
-            this.theme.themeBtn = 'btn-dark'; 
+        changeTheme() {
+          if (this.isDarkMode) {
+            this.theme.bg = 'bg-light';
+            this.theme.nav = 'bg-primary';
+            this.theme.content = 'bg-secondary-subtle';
+            this.theme.themeBtn = 'btn-dark';
           }
-          else{
-            this.theme.bg ='dusk-bg-gray';
+          else {
+            this.theme.bg = 'dusk-bg-gray';
             this.theme.nav = 'bg-dark';
-            this.theme.content ='dusk-bg-lightgray text-light';
-            this.theme.themeBtn = 'btn-light'; 
+            this.theme.content = 'dusk-bg-lightgray text-light';
+            this.theme.themeBtn = 'btn-light';
           }
           this.isDarkMode = !this.isDarkMode;
 
-          if(navBar.classList.contains('fixed-top')) this.navFixed = true;
+          if (navBar.classList.contains('fixed-top')) this.navFixed = true;
           else this.navFixed = false;
         },
       },
-      
+
     });
 
     app.component('side-project', {
-      props:['data'],
+      props: ['data'],
       template: `
           <div class="col col-md-4 mb-3">
             <div class="card m-auto" style="width: 18rem;">
@@ -177,6 +144,35 @@
               </div>
             </div>
           </div>
+      `
+    });
+
+    app.component('nav-bar', {
+      props: ['links', 'navIndex', 'navFixed', 'isDarkMode', 'changeTheme', 'theme', 'navClick'],
+      template: `
+      <nav class="navbar navbar-expand-lg border-bottom border-body"
+      v-bind:class="theme.nav, {'fixed-top':navFixed}" data-bs-theme="dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#page-top">Dusk</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li v-for="(link, index) in links" class="nav-item me-3" v-bind:key="index">
+                <a class="nav-link" v-bind:class="{active: navIndex==index}" aria-current="page" v-bind:href=link.href
+                  @click="navClick(index)">{{link.name}}</a>
+              </li>
+            </ul>
+            <button class="btn" v-bind:class="theme.themeBtn"
+              @click="changeTheme()">
+              <span v-if="isDarkMode==false">dark mode</span>
+              <span v-else>light mode</span>
+            </button>
+          </div>
+        </div>
+      </nav>
       `
     });
 
